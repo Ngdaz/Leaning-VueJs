@@ -38,10 +38,10 @@
 
     <!-- su dung v-model  -->
 
-  <!-- <input  class="username" type="text" v-model="userName" placeholder="enter your username">
+  <input  class="username" type="text" v-model="userName" placeholder="enter your username">
   <input  class="password" type="text" v-model="password" placeholder="enter your password">
     {{userName}}
-    {{password}} -->
+    {{password}}
   </div>
 </template>
 
