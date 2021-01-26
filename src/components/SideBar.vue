@@ -11,7 +11,7 @@
       active-text-color="#ffd04b"
       :collapse="isCollapse"
     >
-      <el-menu-item index="0">
+      <el-menu-item index="0" class="m-0"> 
         <Logo-layout></Logo-layout>
        </el-menu-item>
       <el-submenu index="1">
@@ -49,18 +49,7 @@
   </div>
 </template>
 
-<style>
-.el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 200px;
-  min-height: 400px;
-}
-.sidebar{
-  display: flex;
-  flex-direction: column;
-  
-}
 
-</style>
 
 <script>
 // import LogoLayout from './logo'
@@ -90,3 +79,21 @@ export default {
   })
 };
 </script>
+
+<style>
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+  width: 200px;
+  /* min-height: 400px; */
+  height: 100vh;
+}
+
+.el-menu--collapse {
+  height: 100vh;
+}
+.sidebar{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+</style>

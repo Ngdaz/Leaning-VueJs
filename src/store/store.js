@@ -1,14 +1,21 @@
 import Vuex from 'vuex';
 
 export const store = new Vuex.Store({
-    state: {
-      safelyStoredNumber: 0,
-      isCollapse: false,
-    },
+  state: {
+    isCollapse: false,
+    drawer: false,
+    isHorizontal: false,
+  },
 
-    mutations: {
-        menuCollapse(state){
-            state.isCollapse = !state.isCollapse
-        }
+  mutations: {
+    menuCollapse(state) {
+      state.isCollapse = !state.isCollapse
+    },
+    drawerCollapse(state) {
+      state.drawer = !state.drawer
+    },
+    chekcHorizontal(state) {
+      state.isHorizontal = ! state.isHorizontal
     }
-  });
+  }
+});

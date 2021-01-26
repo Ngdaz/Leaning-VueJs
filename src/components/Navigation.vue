@@ -2,61 +2,92 @@
   <div class="content">
     <div class="top-bar">
       <div>
-        <el-button @click="menuCollapse()" class="btn-collapse">
-          <i class="el-icon-s-fold"></i>
+        <el-button
+          @click="menuCollapse()"
+          class="btn-collapse"
+          :icon="iconCollapse"
+        >
+          <!-- <i class="el-icon-s-fold"></i> -->
         </el-button>
       </div>
       <div class="nav-header">
-        <el-input  class="nav-input" placeholder="Please input"  clearable>
-        </el-input>
-        <el-menu
-          :default-active="activeIndex"
-          class="el-menu-demo"
-          mode="horizontal"
-          
-        >
-          <el-menu-item index="1">Processing Center</el-menu-item>
-          <el-submenu index="2">
-            <template slot="title">Workspace</template>
-            <el-menu-item index="2-1">item one</el-menu-item>
-            <el-menu-item index="2-2">item two</el-menu-item>
-            <el-menu-item index="2-3">item three</el-menu-item>
-            <el-submenu index="2-4">
-              <template slot="title">item four</template>
-              <el-menu-item index="2-4-1">item one</el-menu-item>
-              <el-menu-item index="2-4-2">item two</el-menu-item>
-              <el-menu-item index="2-4-3">item three</el-menu-item>
-            </el-submenu>
-          </el-submenu>
-          <el-menu-item index="3" disabled>Info</el-menu-item>
-          <el-menu-item index="4"
-            ><a href="https://www.ele.me" target="_blank"
-              >Orders</a
-            ></el-menu-item
+        <el-input
+          class="nav-input"
+          placeholder="Please input"
+          clearable
+        ></el-input>
+        <div class="right-header">
+          <!-- drop-down-list -->
+          <el-dropdown class="dropdown-noti">
+            <el-button class="dropdown-noti-button">
+              <i class="el-icon-chat-round"></i>
+            </el-button>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item>Action 1</el-dropdown-item>
+              <el-dropdown-item>Action 2</el-dropdown-item>
+              <el-dropdown-item>Action 3</el-dropdown-item>
+              <el-dropdown-item>Action 4</el-dropdown-item>
+              <el-dropdown-item>Action 5</el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
+          <!-- button for drawer -->
+          <el-button
+            class="button-drawer"
+            @click="drawerCollapse()"
+            icon="el-icon-s-tools"
           >
-        </el-menu>
+          </el-button>
+        </div>
       </div>
     </div>
+    <div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit,
+        corrupti! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Velit, corrupti! Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Velit, corrupti! Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Velit, corrupti! Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Velit, corrupti! Lorem ipsum dolor sit
+        amet consectetur adipisicing elit. Velit, corrupti! Lorem ipsum dolor
+        sit amet consectetur adipisicing elit. Velit, corrupti! Lorem ipsum
+      </p>
+    </div>
+    
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapMutations, mapState } from "vuex";
+
+
 
 export default {
   name: "navbar",
   data() {
     return {
-      activeIndex: "1",
-      activeIndex2: "1",
+      icon: 'class="el-icon-s-fold',
     };
   },
   methods: {
-    menuCollapse() {
-      this.$store.commit("menuCollapse");
+    //map fuction in mutation of store to run in v-on: click
+    ...mapMutations(["menuCollapse"]),
+    ...mapMutations(["drawerCollapse"]),
+  },
+  computed: {
+    //map data form store to the thing in component
+
+    ...mapState({
+      isCollapse: (state) => state.isCollapse,
+    }),
+    iconCollapse() {
+      const icon = this.isCollapse ? "el-icon-s-fold": "el-icon-error";
+      return icon;
     },
   },
-  computed: mapState(["isCollapse"]),
+
+  components: {
+    
+  },
 };
 </script>
 
@@ -64,7 +95,6 @@ export default {
 .top-bar {
   display: flex;
   height: 70px;
-  width: ;
   margin: 0 auto;
 }
 .btn-collapse {
@@ -77,19 +107,34 @@ export default {
   /* width: calc(100vw - 200px); */
   width: 100%;
 }
-.nav-header{
+.nav-header {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  
 }
-.nav-input{
+.nav-input {
   width: 20rem;
   margin-left: 10px;
   margin-top: auto;
-  margin-bottom: auto   ;
+  margin-bottom: auto;
 }
-.el-menu-demo{
-  float: right !important;;
+.right-header {
+  /* float: right !important; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2rem;
+}
+.button-drawer {
+  font-size: 1.5rem;
+  border: none;
+  background: none;
+  margin-left: 2rem;
+}
+
+.dropdown-noti-button {
+  border: none;
+  background: none;
+  font-size: 1.5rem;
 }
 </style>
