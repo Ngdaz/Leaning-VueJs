@@ -3,7 +3,7 @@
     <el-radio-group
       v-model="radio"
       class="radiobutton"
-      
+      @change="chekcHorizontal"
     >
       <el-radio :label="true">Vertical</el-radio>
       <el-radio :label="false">Horizontal</el-radio>
@@ -12,6 +12,9 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
+
 export default {
   name: "ChangeLayout",
 
@@ -19,6 +22,9 @@ export default {
         return{
           radio: true
         }
+    },
+    methods: {
+      ...mapMutations(['chekcHorizontal'])
     }
 
 };

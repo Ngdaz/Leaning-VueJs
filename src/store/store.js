@@ -4,7 +4,7 @@ export const store = new Vuex.Store({
   state: {
     isCollapse: false,
     drawer: false,
-    isHorizontal: false,
+    isHorizontal: true,
   },
 
   mutations: {
