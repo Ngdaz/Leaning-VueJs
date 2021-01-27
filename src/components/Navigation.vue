@@ -13,7 +13,7 @@
       </div>
       <div class="nav-header">
         <el-input
-          class="nav-input"
+          class="nav-input col-sm-2"
           placeholder="Please input"
           clearable
         ></el-input>
@@ -41,28 +41,20 @@
         </div>
       </div>
     </div>
-    <div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit,
-        corrupti! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Velit, corrupti! Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Velit, corrupti! Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Velit, corrupti! Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Velit, corrupti! Lorem ipsum dolor sit
-        amet consectetur adipisicing elit. Velit, corrupti! Lorem ipsum dolor
-        sit amet consectetur adipisicing elit. Velit, corrupti! Lorem ipsum
-      </p>
-    </div>
+    <content-Layout></content-Layout>
     
   </div>
 </template>
 
 <script>
 import { mapMutations, mapState } from "vuex";
-
+import ContentLayout from "./content.vue"
 
 
 export default {
+    components: {
+    ContentLayout
+  },
   name: "navbar",
   data() {
     return {
@@ -86,9 +78,7 @@ export default {
     },
   },
 
-  components: {
-    
-  },
+
 };
 </script>
 
@@ -106,7 +96,7 @@ export default {
 }
 .content {
   /* width: calc(100vw - 200px); */
-  width: 100%;
+  width: auto!important;
 }
 .nav-header {
   display: flex;

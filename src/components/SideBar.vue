@@ -46,7 +46,9 @@
         </el-menu>
       </div>
     </div>
-    <app-navigation></app-navigation>
+    <div class="w-100">
+      <app-navigation></app-navigation>
+    </div>
   </div>
 </template>
 
@@ -95,7 +97,7 @@ export default {
   flex-direction: column;
   height: 100vh;
 }
-.vertical-bar{
-  display: flex;
+.vertical-bar {
+  display: flex;  
 }
 </style>
