@@ -20,10 +20,3 @@ export default {
 };
 </script>
 
-<style>
-.buttonVertical {
-  display: flex;
-  flex-direction: column;
-  margin: 2rem auto ;
-}
-</style>

@@ -1,6 +1,8 @@
 <template>
-  <div class="vertical-bar">
-    <div class="sidebar">
+
+  <div class="vertical-sidebar">
+    <!-- <div class="sidebar"> -->
+ 
       <div>
         <el-menu
           default-active="2"
@@ -44,11 +46,10 @@
             <span slot="title">Navigator Four</span>
           </el-menu-item>
         </el-menu>
+        <!-- </div> -->
       </div>
-    </div>
-    <div class="w-100">
-      <app-navigation></app-navigation>
-    </div>
+
+    <!-- <app-navigation></app-navigation> -->
   </div>
 </template>
 
@@ -57,47 +58,21 @@
 // import { mapGetters } from 'vuex';
 import { mapState } from "vuex";
 import logolayout from "./logo.vue";
-import navbar from "../components/Navigation";
+// import navbar from "../components/Navigation";
 
 export default {
   components: {
     "Logo-layout": logolayout,
-    "app-navigation": navbar,
+    // "app-navigation": navbar,
   },
   name: "SideBar",
-  // data() {
-  //   return {
-  //     isCollapse: false,
-  //   };
-  // },
-  methods: {
-    // menuCollapse() {
-    //     this.isCollapse = !this.isCollapse
-    //     console.log(this.isCollapse);
-    // }
+  data() {
+    return {};
   },
+  methods: {},
   computed: mapState({
     isCollapse: (state) => state.isCollapse,
   }),
 };
 </script>
 
-<style>
-.el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 200px;
-  /* min-height: 400px; */
-  height: 100vh;
-}
-
-.el-menu--collapse {
-  height: 100vh;
-}
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-.vertical-bar {
-  display: flex;  
-}
-</style>

@@ -32,7 +32,7 @@ import widthOption from "../components/width-option";
 
 
 export default {
-  name: "drawer",
+  // name: "drawer",
   data() {
     return {
       // drawer: false,
