@@ -1,8 +1,6 @@
 <template>
-
   <div class="vertical-sidebar">
     <!-- <div class="sidebar"> -->
- 
       <div>
         <el-menu
           default-active="2"
@@ -11,8 +9,9 @@
           text-color="#fff"
           active-text-color="#ffd04b"
           :collapse="isCollapse"
+          style="height: 100vh"
         >
-          <el-menu-item index="0" class="m-0">
+          <el-menu-item index="0">
             <Logo-layout></Logo-layout>
           </el-menu-item>
           <el-submenu index="1">
@@ -48,7 +47,6 @@
         </el-menu>
         <!-- </div> -->
       </div>
-
     <!-- <app-navigation></app-navigation> -->
   </div>
 </template>
@@ -58,12 +56,11 @@
 // import { mapGetters } from 'vuex';
 import { mapState } from "vuex";
 import logolayout from "./logo.vue";
-// import navbar from "../components/Navigation";
+
 
 export default {
   components: {
     "Logo-layout": logolayout,
-    // "app-navigation": navbar,
   },
   name: "SideBar",
   data() {

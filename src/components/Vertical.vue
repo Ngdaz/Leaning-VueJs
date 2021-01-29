@@ -2,11 +2,11 @@
   <div class="vertical">
 
     <el-container>
-      <el-aside >
+      <el-aside  :width="withSideBar">
         <nav-SideBar></nav-SideBar>
       </el-aside>
-      <el-container class="main-and-header">
-        <el-header>
+      <el-container>
+        <el-header class="bg-secondary">
             <navigation-Bar></navigation-Bar>
         </el-header>
         <el-main>
@@ -23,6 +23,7 @@ import NavigationBar from "./Navigation";
 import NavSideBar from "./SideBar";
 import Drawerbar from "./drawer";
 import ContentLayout from "./content.vue";
+import { mapState } from 'vuex';
 export default {
   name: "VerticalLayout",
   components: {
@@ -30,6 +31,16 @@ export default {
     NavSideBar,
     Drawerbar,
     ContentLayout,
+  },
+  computed: {
+    ...mapState({
+      isCollapse: (state) => state.isCollapse
+    }),
+
+    withSideBar() {
+      const num = this.isCollapse ? 65 : 200
+      return num + "px"
+    },
   },
 };
 

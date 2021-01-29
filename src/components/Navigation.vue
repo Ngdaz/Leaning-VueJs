@@ -1,45 +1,35 @@
 <template>
-
-    <div class="top-bar">
-      <div class="row">
-        <div class="col"> 
+  <!-- <div class="top-bar"> -->
+  <div class="row mt-2">
+    <div class="col-9">
+      <div class="row mt-1">
+        <div class="col-1">
           <el-button
-          @click="menuCollapse()"
-          class="btn-collapse"
-          :icon="iconCollapse"
-        >
-        </el-button></div>
-        <div class="col">
-           <el-input
-          class="nav-input"
-          placeholder="Please input"
-          clearable
-        ></el-input>
+            @click="menuCollapse()"
+            class="btn-collapse float-left"
+            :icon="iconCollapse"
+          >
+          </el-button>
         </div>
-        <div class="col">
-          <el-dropdown class="dropdown-noti">
-            <el-button class="dropdown-noti-button">
-              <i class="el-icon-chat-round"></i>
-            </el-button>
-            <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>Action 1</el-dropdown-item>
-              <el-dropdown-item>Action 2</el-dropdown-item>
-              <el-dropdown-item>Action 3</el-dropdown-item>
-              <el-dropdown-item>Action 4</el-dropdown-item>
-              <el-dropdown-item>Action 5</el-dropdown-item>
-            </el-dropdown-menu>
-          </el-dropdown>
+        <div class="col-11">
+          <el-input
+            class="nav-input w-25 float-left"
+            placeholder="Please input"
+            clearable
+          ></el-input>
         </div>
       </div>
-      <div>
-       
-      </div>
-      <div class="nav-header">
-       
-        <div class="right-header">
-          <!-- drop-down-list -->
-          
-          <!-- button for drawer -->
+      <!-- drop-down-list -->
+    </div>
+    <div class="col-3"> 
+      <!-- button for drawer -->
+      <div class="row mt-1">
+        <!--  -->
+        <div class="col">
+          <el-avatar icon="el-icon-user-solid"></el-avatar>
+        </div>
+        <!--  -->
+        <div class="col">
           <el-button
             class="button-drawer"
             @click="drawerCollapse()"
@@ -49,13 +39,13 @@
         </div>
       </div>
     </div>
-
+  </div>
 </template>
 
 <script>
 import { mapMutations, mapState } from "vuex";
 
-export default {  
+export default {
   components: {},
   name: "navbar",
   data() {
@@ -81,4 +71,3 @@ export default {
   },
 };
 </script>
-

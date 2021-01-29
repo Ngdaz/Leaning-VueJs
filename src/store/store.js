@@ -5,6 +5,7 @@ export const store = new Vuex.Store({
     isCollapse: false,
     drawer: false,
     isHorizontal: true,
+    layouttype:''
   },
 
   mutations: {
@@ -16,6 +17,11 @@ export const store = new Vuex.Store({
     },
     chekcHorizontal(state) {
       state.isHorizontal = ! state.isHorizontal
+    },
+    checkLayout(state,event) {
+      state.layouttype = event
+      console.log(state.layouttype);
     }
+    
   }
 });
