@@ -1,34 +1,34 @@
 <template>
   <div class="buttonVertical">
-    <el-radio-group v-model="radio" class="radiobutton" @change="checkLayout">
-      <el-radio :label="1">Fluid</el-radio>
-      <el-radio :label="2">Boxed</el-radio>
-      <el-radio :label="3">Scrollable</el-radio>
-      <el-radio :label="4">Fixed</el-radio>
-    </el-radio-group>
+    <el-switch
+      style="display: block"
+      v-model="value2"
+      active-color="#13ce66"
+      inactive-color="#ff4949"
+      active-text="Boxed"
+      inactive-text="Fluid"
+      @change="checklayout"
+    >
+    </el-switch>
   </div>
 </template>
 
 <script>
-import {  mapMutations } from 'vuex'
-
+import { mapMutations } from "vuex";
 
 export default {
   name: "widthOption",
   data() {
     return {
-      radio: true,
+       value2: true
     };
   },
   methods: {
-    ...mapMutations(['checklayout'])
-    
+    ...mapMutations(["checklayout"]),
   },
   computed: {
     // ...mapState({
-      
     // })
-  }
+  },
 };
 </script>
-

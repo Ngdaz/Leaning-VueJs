@@ -1,5 +1,7 @@
 <template>
-  <div class="row">
+  <div class="row"
+     
+  >
     <div class="col-sm-4 text-success">
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae,
@@ -99,7 +101,13 @@
 </template>
 
 <script>
-export default {};
+
+export default {
+
+
+
+
+};
 </script>
 
 <style></style>

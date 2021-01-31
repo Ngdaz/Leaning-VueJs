@@ -25,8 +25,8 @@
       <!-- button for drawer -->
       <div class="row mt-1">
         <!--  -->
-        <div class="col">
-          <el-avatar icon="el-icon-user-solid"></el-avatar>
+        <div class="col d-flex justify-content-end pr-3">
+          <el-avatar icon="el-icon-user-solid "></el-avatar>
         </div>
         <!--  -->
         <div class="col">

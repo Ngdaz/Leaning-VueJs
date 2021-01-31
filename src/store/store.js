@@ -18,9 +18,9 @@ export const store = new Vuex.Store({
     chekcHorizontal(state) {
       state.isHorizontal = ! state.isHorizontal
     },
-    checkLayout(state,event) {
+    checklayout(state,event) {
       state.layouttype = event
-      console.log(state.layouttype);
+      // console.log(state.layouttype);
     }
     
   }
